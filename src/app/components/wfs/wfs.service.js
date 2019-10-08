@@ -20,6 +20,7 @@ export class WFSService {
 
         return fetch(url, {
             method: 'get',
+            mode: 'no-cors',
         }).then(function(response) {
             return response.text();
         }).then(function(xml) {
