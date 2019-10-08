@@ -46,7 +46,7 @@ export class LayersService {
     asyncCantonLayer() {
         // documentation for ol.source.TileWMS: http://geoadmin.github.io/ol3/apidoc/ol.source.TileWMS.html
         let params = {
-            'LAYERS': 'Kantonsgrenzen',
+            'LAYERS': 'Kantonsgrenzen,Regionsgrenzen,Gemeindegrenzen',
             'TILED': true,
             'VERSION': '1.3.0',
             'FORMAT': 'image/png',
@@ -75,7 +75,7 @@ export class LayersService {
     asyncGrundbuchMapLayer() {
         // documentation for ol.source.TileWMS: http://geoadmin.github.io/ol3/apidoc/ol.source.TileWMS.html
         let params = {
-            'LAYERS': 'Liegenschaften',
+            'LAYERS': 'lcsf_sw,lcsfproj,sosf_sw,lcsfgeb_sw,lcobj_nr,lcobj_namen,plsf,plli,plna,soli,sopt,soobj_namen,soobj_nr,locpos,hadr_namen,hadr_nr,resf,dprsf,resf_nr,dprsf_nr,mbsf,resfproj,resfproj_nr,dprsfproj,dprsfproj_nr,osbp,cppt,tbbp,lnna',
             'TILED': true,
             'VERSION': '1.3.0',
             'FORMAT': 'image/png',
@@ -83,7 +83,7 @@ export class LayersService {
         };
 
         let wmsOEREBSource = new this.ol.source.TileWMS(({
-            url: 'https://wms.geo.gr.ch/amtlichevermessung',
+            url: 'https://wms-test.gis.gr.ch/wms/gbplan_oereb',
             params: params,
             serverType: 'geoserver',
         }));
@@ -104,7 +104,7 @@ export class LayersService {
     asyncOrthoPhotoLayer() {
         var self = this;
 
-        return fetch('http://83.166.150.97/mapcache/wmts/1.0.0/WMTSCapabilities.xml')
+        return fetch('https://wmts.geo.gr.ch/mapcache/wmts/1.0.0/WMTSCapabilities.xml')
             .then(function (response) {
                 return response.text();
             })
