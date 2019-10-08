@@ -14,22 +14,22 @@ export class ConfigService {
 
         // default projection
         this.projection = {
-            extent: [2485869.5728, 1076443.1884, 2837076.5648, 1299941.7864],
+            extent: [2691000.0, 1098000.0, 2835000.0, 1242000.0],
             epsg: 'EPSG:2056'
         };
 
         // default center
-        this.center = [2616445.3125, 1190976.5625];
+        this.center = [2750000, 1150000];
 
         // map services
         this.services = {
             // WFS mit Grundstücken und selbständigen und dauernden Rechten. Wird für die Markierung in der Karte bei der Auswahl der Grundstücke verwendet.
-            wfsPropertyMarking: 'https://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_ortsangabenwfs_d_fk/MapServer/WFSServer',
+            wfsPropertyMarking: 'https://wfs.geo.gr.ch/amtlichevermessung',
             // Basis URL des OEREB-Webservice gemäss Weisung
-            oereb: 'https://www.oereb.apps.be.ch',
-            pdf: 'https://www.oereb-test.apps.be.ch',
+            oereb: 'http://olivin3.gis.gr.ch/main/oereb',
+            pdf: 'http://olivin3.gis.gr.ch/main/oereb',
             // Aufruf der Karte des ÖREB-Katasters für das im Samrt-Auszug ausgewählte Grundstück. Variablen EGRID und Language.
-            extern: 'https://www.map.apps.be.ch/pub/externalcall.jsp?query1=egrid&keyvalue1=-EGRID-&keyname1=EGRID&project=a42pub_oereb_oeffen_-LANGUAGE-&language=-LANGUAGE-&userprofile=geo&client=auto'
+            extern: 'http://map.geo.gr.ch/gr_webmaps/wsgi/theme/Basisinformationen?wfs_url=https://wfs.geo.gr.ch/search&wfs_layer=Liegenschaften&wfs_egris_egrid=-EGRID-'
         };
 
         this.opacityRestrictionLayers = 0.7;
