@@ -104,13 +104,14 @@ export class LayersService {
     asyncOrthoPhotoLayer() {
         var self = this;
 
-        return fetch('https://wmts.geo.gr.ch/mapcache/wmts/1.0.0/WMTSCapabilities.xml', {
-            mode: 'no-cors',
-        })
+        return fetch('https://wmts.geo.gr.ch/mapcache/wmts/1.0.0/WMTSCapabilities.xml')
             .then(function (response) {
                 return response.text();
             })
             .then(function(text) {
+
+                console.assert(text, 'no wmts / ortho loaded')
+
                 let result = self.parser.read(text);
 
                 let options = ol.source.WMTS.optionsFromCapabilities(result, {

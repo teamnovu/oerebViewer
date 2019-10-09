@@ -47,6 +47,9 @@ export class OEREBService {
             {
                 cache: true,
                 transformResponse: (response) => {
+
+                    console.assert('no egrid loaded')
+
                     let data = JSON.parse(response);
 
                     if (!angular.isObject(data) ||  !angular.isDefined(data.GetEGRIDResponse)) {

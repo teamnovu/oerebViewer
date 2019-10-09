@@ -20,11 +20,15 @@ export class WFSService {
 
         return fetch(url, {
             method: 'get',
-            mode: 'no-cors',
         }).then(function(response) {
             return response.text();
         }).then(function(xml) {
+
+            console.assert(xml, 'no wfs loaded')
+
             let features = new ol.format.WFS().readFeatures(xml);
+
+            console.assert(angular.isArray(features) && features.length, 'no features for wfs')
 
             let vectorSource = new self.ol.source.Vector({
                 features: features

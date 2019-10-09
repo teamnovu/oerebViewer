@@ -48,7 +48,6 @@ export class EsriToken {
         return fetch(this.endpoint, {
             method: 'POST',
             body: formData.toString(),
-            mode: 'no-cors',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
             }
