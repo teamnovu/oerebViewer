@@ -76,6 +76,7 @@ export class LayersService {
         // documentation for ol.source.TileWMS: http://geoadmin.github.io/ol3/apidoc/ol.source.TileWMS.html
         let params = {
             'LAYERS': 'lcsf_sw,lcsfproj,sosf_sw,lcsfgeb_sw,lcobj_nr,lcobj_namen,plsf,plli,plna,soli,sopt,soobj_namen,soobj_nr,locpos,hadr_namen,hadr_nr,resf,dprsf,resf_nr,dprsf_nr,mbsf,resfproj,resfproj_nr,dprsfproj,dprsfproj_nr,osbp,cppt,tbbp,lnna',
+			// 'LAYERS': 'boflaeche_sw,boflaechesymbol_v,projboflaeche,flaechenelement_sw,flaechenelementsymbol_v,boflaeche_geb_sw,rohrleitung_linienelement,rohrleitung_beschriftung,boflaeche_linien,gebaeudenummer,bo_objektname,flaechenelement_linien,linienelement,linienelementsymbol_v,punktelement,eo_objektname,eo_objektnummer,gebaeudename,lokalisationsname,hausnummer,ortschaftsname,flurname,ortsname,gelaendename,projliegenschaft,projgrundstueckpos,liegenschaft,selbstrecht,bergwerk,grundstueckpos,gemeindegrenze,grenzpunkt,hfp3,lfp3,hfp2,lfp2,hfp1,lfp1',
             'TILED': true,
             'VERSION': '1.3.0',
             'FORMAT': 'image/png',
@@ -84,6 +85,7 @@ export class LayersService {
 
         let wmsOEREBSource = new this.ol.source.TileWMS(({
             url: 'https://wms-test.gis.gr.ch/wms/gbplan_oereb',
+            // url: 'https://wms-test.gis.gr.ch/wms/grundbuchplan_oereb',
             params: params,
             serverType: 'geoserver',
         }));
