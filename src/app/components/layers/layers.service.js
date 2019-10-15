@@ -84,7 +84,7 @@ export class LayersService {
         };
 
         let wmsOEREBSource = new this.ol.source.TileWMS(({
-            url: 'https://wms-test.gis.gr.ch/wms/gbplan_oereb',
+            url: 'http://wms-test.gis.gr.ch/wms/gbplan_oereb', // TODO: handle SEC_ERROR_UNKNOWN_ISSUER
             // url: 'https://wms-test.gis.gr.ch/wms/grundbuchplan_oereb',
             params: params,
             serverType: 'geoserver',
