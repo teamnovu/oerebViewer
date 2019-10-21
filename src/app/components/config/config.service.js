@@ -26,8 +26,8 @@ export class ConfigService {
             // WFS mit Grundstücken und selbständigen und dauernden Rechten. Wird für die Markierung in der Karte bei der Auswahl der Grundstücke verwendet.
             wfsPropertyMarking: 'https://wfs.geo.gr.ch/amtlichevermessung',
             // Basis URL des OEREB-Webservice gemäss Weisung
-            oereb: 'https://olivin3.gis.gr.ch/main/oereb',
-            pdf: 'https://olivin3.gis.gr.ch/main/oereb',
+            oereb: 'https://oereb.geo.gr.ch/main/oereb',
+            pdf: 'https://oereb.geo.gr.ch/main/oereb',
             // Aufruf der Karte des ÖREB-Katasters für das im Samrt-Auszug ausgewählte Grundstück. Variablen EGRID und Language.
             // extern: 'https://www.map.apps.be.ch/pub/externalcall.jsp?query1=egrid&keyvalue1=-EGRID-&keyname1=EGRID&project=a42pub_oereb_oeffen_-LANGUAGE-&language=-LANGUAGE-&userprofile=geo&client=auto'
             extern: 'http://map.geo.gr.ch/gr_webmaps/wsgi/theme/Basisinformationen?wfs_url=https://wfs.geo.gr.ch/search&wfs_layer=Liegenschaften&wfs_egris_egrid=-EGRID-'
