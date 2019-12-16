@@ -1,0 +1,10 @@
+# LDAP Authentication -----------------------------------------------------------------------#
+AuthType					Basic
+AuthName					"OEREB-Pruefplattform Login"
+AuthBasicProvider			ldap
+AuthLDAPURL					"ldap://master.geo.gr.ch:389/ou=People,dc=geo,dc=gr,dc=ch?uid"
+AuthLDAPGroupAttribute		memberUid
+AuthLDAPGroupAttributeIsDN	off
+#--------------------------------------------------------------------------------------------#
+Require						ldap-group cn=oereb-pruef,ou=Geodienste,dc=geo,dc=gr,dc=ch
+#--------------------------------------------------------------------------------------------#
