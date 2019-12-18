@@ -44,8 +44,8 @@ export class OEREBService {
 
         let promise = this.$http.get(url, {cache: true})
             .then((response) => {
-                if (response.status !== 200) {
-                    throw response;
+                if (! response.data && response.status === 204) {
+                    return false;
                 }
 
                 let data = JSON.parse(response.data);
