@@ -42,35 +42,33 @@ export class OEREBService {
 
         let url = this.Config.services.oereb + '/getegrid/json/?GNSS=' + long + ',' + lat;
 
-        let promise = this.$http.get(
-            url,
-            {
-                cache: true,
-                transformResponse: (response) => {
-
-                    console.assert('no egrid loaded')
-
-                    let data = JSON.parse(response);
-
-                    if (!angular.isObject(data) ||  !angular.isDefined(data.GetEGRIDResponse)) {
-                        return false;
-                    }
-
-                    return data.GetEGRIDResponse
+        let promise = this.$http.get(url, {cache: true})
+            .then((response) => {
+                if (response.status !== 200) {
+                    throw response;
                 }
-            }
-        ).catch((data) => {
 
-            let warning = this.$filter('translate')('oerebServiceNotAvailable');
+                let data = JSON.parse(response.data);
 
-            if (data.status == 500)
-                warning = this.$filter('translate')('oerebService500');
+                if (!angular.isObject(data) || !angular.isDefined(data.GetEGRIDResponse)) {
+                    return false;
+                }
 
-            if (data.status == 204)
-                warning = this.$filter('translate')('oerebService204');
+                return data.GetEGRIDResponse
+            })
+            .catch((data) => {
+                let warning = this.$filter('translate')('oerebServiceNotAvailable');
 
-            this.Notification.warning(warning);
-        });
+                if (data.status == 500) {
+                    warning = this.$filter('translate')('oerebService500');
+                }
+
+                if (data.status == 204) {
+                    warning = this.$filter('translate')('oerebService204');
+                }
+
+                this.Notification.warning(warning);
+            });
 
         return promise;
     }
