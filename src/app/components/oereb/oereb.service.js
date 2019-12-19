@@ -44,17 +44,13 @@ export class OEREBService {
 
         let promise = this.$http.get(url, {cache: true})
             .then((response) => {
-                if (! response.data && response.status === 204) {
+                if (!angular.isObject(response.data) || !angular.isDefined(response.data.GetEGRIDResponse)) {
                     return false;
                 }
 
-                let data = JSON.parse(response.data);
+                response.data = response.data.GetEGRIDResponse;
 
-                if (!angular.isObject(data) || !angular.isDefined(data.GetEGRIDResponse)) {
-                    return false;
-                }
-
-                return data.GetEGRIDResponse
+                return response;
             })
             .catch((data) => {
                 let warning = this.$filter('translate')('oerebServiceNotAvailable');
