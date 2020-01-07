@@ -157,6 +157,9 @@ export class ExtractsService {
             if (accumulation.LengthShare) {
                 accumulation.LengthShare += restriction.LengthShare
             }
+            if (accumulation.LegalProvisions && angular.isArray(accumulation.LegalProvisions)) {
+                accumulation.LegalProvisions = accumulation.LegalProvisions.concat(restriction.LegalProvisions)
+            }
 
             return acc;
         }, {}));
