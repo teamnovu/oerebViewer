@@ -16,7 +16,7 @@
     "no_property_yet_title": "Kein Grundstück geladen!",
     "no_property_yet_text": "Navigieren Sie zum gewünschten Grundstück und starten Sie die Auswertung.",
     "no_property_loaded": "Bitte wählen Sie ein Grundstück aus.",
-    "no_property_found": "Für dieses Grundstück kann keine Auswertung erstellt werden, da die Daten der amtlichen Vermessung nicht in ausreichender Qualität vorliegen.",
+    "no_property_found": "Für das gewünschte Grundstück ist aktuell keine Auswertung möglich.",
     "propertyLoaded": "Geladenes Grundstück",
     "propertyDetail": "Informationen zum Grundstück",
     "noRestrictions": "Keine",
@@ -92,9 +92,9 @@
     "responsibilityBackend": "Technische Realisierung",
     "responsibilityUX": "User Experience und Usability",
 
-    "oerebServiceNotAvailable" : "Der OEREB Service des Kanton Graubünden ist derzeit nicht erreichbar.",
-    "oerebService500": "Der OEREB Service des Kanton Graubündens hat keine Daten zu diesem Grundstück.",
-    "oerebService204": "Kein Grundstück mit dieser ID.",
+    "oerebServiceNotAvailable" : "Der ÖREB-Server des Kanton Graubünden ist derzeit nicht erreichbar.",
+    "oerebService500": "Der ÖREB-Server Service des Kanton Graubünden ist derzeit nicht erreichbar.",
+    "oerebService204": "Für das gewünschte Grundstück ist aktuell keine Auswertung möglich.",
 
     "gstart" : {
     "0": "Liegenschaft",

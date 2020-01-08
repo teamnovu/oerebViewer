@@ -16,7 +16,7 @@
     "no_property_yet_title": "Chargia nagins bains immobigliars!",
     "no_property_yet_text": "Navigai al bain immobigliar giavischà ed iniziai l'evaluaziun.",
     "no_property_loaded": "Tscherni per plaschair in bain immobigliar.",
-    "no_property_found": "Per quest bain immobigliar na poi betg vegnir fatga in'evaluaziun, perquai che las datas da la mesiraziun uffiziala n'han betg ina qualitad suffizienta.",
+    "no_property_found": "Per il bain immobigliar giavischà na poi betg vegnir fatga in'evaluaziun per il mument.",
     "propertyLoaded": "Bain immobigliar chargià",
     "propertyDetail": "Infurmaziuns davart il bain immobigliar",
     "noRestrictions": "Naginas",
@@ -94,7 +94,7 @@
 
     "oerebServiceNotAvailable" : "Il servetsch RDPP dal chantun Grischun n'è betg cuntanschibel per il mument.",
     "oerebService500": "Il servetsch RDPP dal chantun Grischun n'ha naginas datas per quest bain immobigliar.",
-    "oerebService204": "Chattà nagins bains immobigliars.",
+    "oerebService204": "Per il bain immobigliar giavischà na poi betg vegnir fatga in'evaluaziun per il mument.",
 
     "gstart" : {
     "0": "Liegenschaft",

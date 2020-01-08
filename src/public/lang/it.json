@@ -16,7 +16,7 @@
     "no_property_yet_title": "Nessun fondo caricato!",
     "no_property_yet_text": "Navighi verso il fondo desiderato e avvii la valutazione.",
     "no_property_loaded": "Selezioni per favore un fondo.",
-    "no_property_found": "Per questo fondo non è possibile svolgere l'analisi, siccome la qualità dei dati della misurazione ufficiale non è sufficiente.",
+    "no_property_found": "Al momento non è possibile svolgere l'analisi per il fondo desiderato.",
     "propertyLoaded": "Fondo caricato",
     "propertyDetail": "Informazioni relative al fondo",
     "noRestrictions": "Nessuna",
@@ -94,7 +94,7 @@
 
     "oerebServiceNotAvailable" : "Il servizio RDPP del cantone dei Grigioni non è attualmente disponibile.",
     "oerebService500": "Il Servizio RDPP del Cantone dei Grigioni non dispone di dati su questa proprietà.",
-    "oerebService204": "Nessuna proprieta' con questo ID.",
+    "oerebService204": "Al momento non è possibile svolgere l'analisi per il fondo desiderato.",
 
     "gstart" : {
     "0": "Liegenschaft",
