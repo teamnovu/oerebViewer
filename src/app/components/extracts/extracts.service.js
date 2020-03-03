@@ -145,19 +145,19 @@ export class ExtractsService {
 
             const accumulation = acc[restriction.TypeCode];
 
-            if (accumulation.NrOfPoints) {
+            if (typeof accumulation.NrOfPoints !== 'undefined') {
                 accumulation.NrOfPoints += restriction.NrOfPoints
             }
-            if (accumulation.PartInPercent) {
+            if (typeof accumulation.PartInPercent !== 'undefined') {
                 accumulation.PartInPercent += restriction.PartInPercent
             }
-            if (accumulation.AreaShare) {
+            if (typeof accumulation.AreaShare !== 'undefined') {
                 accumulation.AreaShare += restriction.AreaShare
             }
-            if (accumulation.LengthShare) {
+            if (typeof accumulation.LengthShare !== 'undefined') {
                 accumulation.LengthShare += restriction.LengthShare
             }
-            if (accumulation.LegalProvisions && angular.isArray(accumulation.LegalProvisions)) {
+            if (typeof accumulation.LegalProvisions !== 'undefined' && angular.isArray(accumulation.LegalProvisions)) {
                 accumulation.LegalProvisions = accumulation.LegalProvisions.concat(restriction.LegalProvisions)
             }
 
