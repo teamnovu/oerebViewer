@@ -102,6 +102,14 @@
     "2": "Quellrecht",
     "3": "Konzessionsrecht",
     "4": "übrige Rechte"
-  }
+  },
+
+    "tooltip_search": "Suchen",
+    "tooltip_current_location": "Standort anzeigen",
+    "tooltip_zoom_estate": "Auf Grundstück zoomen",
+    "tooltip_zoom_in": "Vergrössern",
+    "tooltip_zoom_out": "Verkleinern",
+    "tooltip_aerial": "Luftbild anzeigen",
+    "tooltip_map": "Karte anzeigen"
 
 }

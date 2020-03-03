@@ -53,7 +53,9 @@
             </div>
 
             <div ng-class="{'hidden': !main.extract}" class="show-for-medium header-title">
-                <h2><button ng-if="!details.noData" ng-click="main.centerObject()">{{"detailProperty" | translate}} {{main.extract.RealEstate.Number}} ({{main.extract.RealEstate.Municipality}})</button></h2>
+                <h2><button ng-if="!details.noData" ng-click="main.centerObject()" title="{{ 'tooltip_zoom_estate' | translate}}">
+                    {{"detailProperty" | translate}} {{main.extract.RealEstate.Number}} ({{main.extract.RealEstate.Municipality}})
+                </button></h2>
             </div>
             <a ng-click="main.reloadPage()" title="{{'appReset' | translate}}" class="mainlogo">
                 <p>
