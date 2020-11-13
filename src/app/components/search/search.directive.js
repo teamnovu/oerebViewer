@@ -1,3 +1,5 @@
+import { val } from 'angular-ui-router';
+
 export function SearchDirective() {
     'ngInject';
 
@@ -55,6 +57,8 @@ class SearchController {
         $scope.$watch(function () {
             return self.search;
         }, function (value) {
+            let point;
+
             if (self.search !== null && typeof self.search === 'object') {
                 // blur input
                 self.$element.find('input').blur();
@@ -65,6 +69,9 @@ class SearchController {
                 self.Map.setPosition(coordinates);
                 self.Map.click(coordinates);
 
+            } else if (point = Coordinates.parse2056(self.search)) {
+                self.Map.setPosition(point);
+                self.Map.click(point);
             }
         });
 
