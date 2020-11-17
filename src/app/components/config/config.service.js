@@ -33,7 +33,7 @@ export class ConfigService {
             extern: 'http://map.geo.gr.ch/gr_webmaps/wsgi/theme/Basisinformationen?wfs_url=https://wfs.geo.gr.ch/search&wfs_layer=Liegenschaften&wfs_egris_egrid=-EGRID-'
         };
 
-        this.opacityRestrictionLayers = 0.7;
+        this.opacityRestrictionLayers = 0.75;
 
         // configure order of sub themes of accordion 'LandUsePlans'
         this.customSortList = [
