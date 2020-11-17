@@ -15,7 +15,7 @@ export class LayersService {
         */
 
         // Geometrie der Kantonsgrenze
-        this.add(this.asyncCantonLayer());
+        // this.add(this.asyncCantonLayer());
 
         // Grundbuchplan schwarz-weiss
         this.add(this.asyncGrundbuchMapLayer());
@@ -32,21 +32,21 @@ export class LayersService {
 
     setView(name) {
         if (name === 'map') {
-            this.show('greyMap'); // layer name
+            this.show('grundbuchMap'); // layer name
             this.hide('orthoPhoto');
         }
 
         if (name === 'satellite') {
             this.show('orthoPhoto');
-            this.hide('greyMap');
+            this.hide('grundbuchMap');
         }
     }
 
 
-    asyncCantonLayer() {
+    /* asyncCantonLayer() {
         // documentation for ol.source.TileWMS: http://geoadmin.github.io/ol3/apidoc/ol.source.TileWMS.html
         let params = {
-            'LAYERS': 'ch.swisstopo.swissboundaries3d-kanton-flaeche.fill',
+            'LAYERS': 'Kantonsgrenzen',
             'TILED': true,
             'VERSION': '1.3.0',
             'FORMAT': 'image/png',
@@ -54,7 +54,7 @@ export class LayersService {
         };
 
         let wmsOEREBSource = new this.ol.source.TileWMS(({
-            url: 'https://wms.geo.admin.ch/',
+            url: 'https://wms.geo.gr.ch/admineinteilung',
             params: params,
             serverType: 'geoserver',
         }));
@@ -70,7 +70,7 @@ export class LayersService {
         wmsOEREB.setZIndex(500);
 
         return wmsOEREB;
-    }
+    } */
 
     asyncGrundbuchMapLayer() {
         // documentation for ol.source.TileWMS: http://geoadmin.github.io/ol3/apidoc/ol.source.TileWMS.html
@@ -86,8 +86,8 @@ export class LayersService {
 
         let wmsOEREBSource = new this.ol.source.TileWMS(({
             //url: 'https://wms-test.gis.gr.ch/wms/gbplan_oereb',
-            // url: 'https://wms-test.gis.gr.ch/wms/grundbuchplan_oereb',
             url: 'https://wms.geo.gr.ch/hg_oereb',
+            //url: 'https://wms.geo.gr.ch/hg_oereb',
             params: params,
             serverType: 'geoserver',
         }));
@@ -106,38 +106,33 @@ export class LayersService {
     }
 
     asyncOrthoPhotoLayer() {
-        var self = this;
+        // documentation for ol.source.TileWMS: http://geoadmin.github.io/ol3/apidoc/ol.source.TileWMS.html
+        let params = {
+            'LAYERS': 'hg_luftbild',
+            'TILED': true,
+            'VERSION': '1.3.0',
+            'FORMAT': 'image/png',
+            'CRS': 'EPSG:2056'
+        };
 
-        return fetch('https://wmts.geo.gr.ch/mapcache/wmts/1.0.0/WMTSCapabilities.xml')
-            .then(function (response) {
-                return response.text();
-            })
-            .then(function(text) {
+        let wmsOEREBSource = new this.ol.source.TileWMS(({
+            url: 'https://wms.geo.gr.ch/hg_luftbild',
+            params: params,
+            serverType: 'geoserver',
+        }));
 
-                console.assert(text, 'no wmts / ortho loaded')
+        // http://geoadmin.github.io/ol3/apidoc/ol.layer.Tile.html
+        let wmsOEREB = new this.ol.layer.Tile({
+            opacity: 1,
+            visible: false, // is not visible per default
+            source: wmsOEREBSource,
+            name: 'orthoPhoto'
+        });
 
-                let result = self.parser.read(text);
+        wmsOEREB.setZIndex(1);
 
-                let options = ol.source.WMTS.optionsFromCapabilities(result, {
-                    layer: 'Luftbild',
-                    matrixSet: 'EPSG:2056'
-                });
-
-                let wmtsSource = new ol.source.WMTS(options);
-
-                let wmtsLayer = new ol.layer.Tile({
-                    opacity: 1,
-                    source: wmtsSource,
-                    visible: false,
-                    name: 'orthoPhoto'
-                });
-
-                wmtsLayer.setZIndex(3);
-
-                return wmtsLayer;
-            })
+        return wmsOEREB;
     }
-
     /*
         LAYERS END
      */
