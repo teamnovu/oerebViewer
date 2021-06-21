@@ -2,13 +2,19 @@
 
     "languages" : {
         "german": "Deutsch",
-        "french": "Français"
+        "romansh": "Rumantsch",
+        "italian": "Italiano"
     },
 
     "subtitle": "Kataster",
     "title": "ÖREB-",
     "appReset": "Alles Zurücksetzen",
-    "mainAppTitle": "ÖREB-App",
+    "mainAppTitle": "ÖREB-Viewer",
+    "legendOerebStatusTitle": "Status des ÖREB-Katasters",
+    "statusTextTitle":"Erläuterungen zur Legende",
+    "statusText1":"Bundesthemen: Projektierungszonen Nationalstrassen, Baulinien Nationalstrassen, Projektierungszonen Eisenbahnanlagen, Baulinien Eisenbahnanlagen, Projektierungszonen Flughafenanlagen, Baulinien Flughafenanlagen, Sicherheitszonenplan, KbS im Bereich der zivilien Flugplätze, KbS im Bereich des öffentlichen Verkehrs",
+    "statusText2":"Nutzungsplanungsthemen: Kommunale Nutzungsplanung - Zonenplan und Genereller Gestaltungsplan, Kommunale Nutzungsplanung - Genereller Erschliessungsplan, Kommunale Nutzungsplanung - Folgeplanungen, Lärmempfindlichkeitsstufen (in Nutzungszonen), Statische Waldgrenzen, Waldabstandslinien",
+    "statusText3":"Vollständiger ÖREB-Kataster: Das Thema KbS im Bereich des Militärs ist schweizweit noch nicht verfügbar.",
     "mainTitle": "Auszug aus dem ÖREB-Kataster",
     "titleMainMenu": "Menü",
     "titleMainMenuClose": "Menü",
@@ -21,7 +27,7 @@
     "noRestrictions": "Keine",
     "bundlogo": "Logo der Schweizerischen Eidgenossenschaft",
     "bundText": "",
-    "kantonlogo": "Logo des Kantons Bern",
+    "kantonlogo": "Logo des Kantons Graubünden",
     "kantonText": "",
     "active": "aktiv",
     "jump_content": "Zum Inhalt springen",
@@ -73,7 +79,7 @@
     "restrictionLegal": "Gesetzliche Grundlagen",
     "restrictionReference": "Weitere Informationen und Hinweise",
     "contentTitleGlossary": "Glossar",
-    "titleGeneralInformation": "Allgemeine Hinweise",
+    "titleGeneralInformation": "Allgemeine Informationen",
     "titleBaseData": "Grundlagendaten",
     "titleRemarksImprint": "Hinweise",
     "titleResponsibilityImprint": "Verantwortlichkeiten",
@@ -83,17 +89,17 @@
     "amount": "Anzahl",
     "markerAlt":"Markiertes Grundstück",
     "languageISO": "de",
-    "oerebText": "Dies ist der SmartAuszug zum Kataster der öffentlich-rechtlichen Eigentumsbeschränkungen (ÖREB)",
-    "logoBundPath": "https://files.be.ch/bve/agi/oereb/logos/eidgenossenschaft.png",
-    "logoKantonPath": "/assets/images/Kanton_Bern_KS_RGB.png",
+    "oerebText": "Dies ist der dynamische Auszug des Kataster der öffentlich-rechtlichen Eigentumsbeschränkungen (ÖREB-Kataster).",
+    "logoBundPath": "https://oereb-pruef.geo.gr.ch/assets/images/logo_confederation.png",
+    "logoKantonPath": "https://oereb-pruef.geo.gr.ch/assets/images/logo_canton.png",
     "responsibilityContent": "Katasterverantwortliche Stelle",
     "responsibilityDesign": "Gestaltung und Frontend-Design",
     "responsibilityBackend": "Technische Realisierung",
     "responsibilityUX": "User Experience und Usability",
 
-    "oerebServiceNotAvailable" : "Der OEREB Service des Kanton Bern ist derzeit nicht erreichbar.",
-    "oerebService500": "Der OEREB Service des Kanton Berns hat keine Daten zu diesem Grundstück.",
-    "oerebService204": "Kein Grundstück mit dieser ID.",
+    "oerebServiceNotAvailable" : "Der ÖREB-Server des Kanton Graubünden ist derzeit nicht erreichbar.",
+    "oerebService500": "Der ÖREB-Server Service des Kanton Graubünden ist derzeit nicht erreichbar.",
+    "oerebService204": "Für das gewünschte Grundstück ist aktuell keine Auswertung möglich.",
 
     "gstart" : {
     "0": "Liegenschaft",
@@ -101,6 +107,14 @@
     "2": "Quellrecht",
     "3": "Konzessionsrecht",
     "4": "übrige Rechte"
-  }
+  },
+
+    "tooltip_search": "Suchen",
+    "tooltip_current_location": "Standort anzeigen",
+    "tooltip_zoom_estate": "Auf Grundstück zoomen",
+    "tooltip_zoom_in": "Vergrössern",
+    "tooltip_zoom_out": "Verkleinern",
+    "tooltip_aerial": "Luftbild anzeigen",
+    "tooltip_map": "Karte anzeigen"
 
 }

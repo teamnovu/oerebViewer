@@ -607,12 +607,12 @@ body {
             padding-left:12px;
             padding-right:12px;
             .logo-gemeinde {
-              width:32px;
+              width:45px;
               display:inline-block;
               float:left;
               margin-right:10px;
               margin-bottom:20px;
-              background-size: contain;
+              background-size: cover;
               background-repeat: no-repeat;
               background-position: top center;
               background-blend-mode: multiply;
@@ -820,6 +820,9 @@ body {
         margin-right:20px;
         background-blend-mode: multiply;
 
+      }
+      .logo-gemeinde {
+        background-size: cover;
       }
       .logo-oereb, .logo-kanton, .logo-bund {
         width:300px;

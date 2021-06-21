@@ -99,4 +99,26 @@ export class CoordinatesService {
     transform(coordinates, systemFrom, systemTo) {
         return proj4(systemFrom.proj4, systemTo.proj4, coordinates);
     }
+
+
+    parse2056(input) {
+        let parts, E, N, point;
+        if (typeof input !== 'string') return;
+
+        input = input.replace(/[^0-9\ \.]/g, "").trim();
+        parts = input.split(' ');
+
+        if (parts.length !== 2 || parts[0].length < 7 || parts[1].length < 7) return;
+
+        E = parts[0][0] === '2' ? parts[0] : (parts[1][0] === '2' ? parts[1] : null);
+        N = parts[0][0] === '1' ? parts[0] : (parts[1][0] === '1' ? parts[1] : null);
+
+        if (!E || !N) return;
+
+        E = parseFloat(E);
+        N = parseFloat(N);
+
+        point = this.create(this.System[2056], [E, N]);
+        return point;
+    }
 }

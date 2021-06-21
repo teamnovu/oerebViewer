@@ -8,7 +8,8 @@ export function LegalListDirective() {
             documents: '=',
             title: '=',
             xsitype: '=',
-            entryicon: '='
+            entryicon: '=',
+            sortbyofficialnumber: '='
         },
         controller: LegalListController,
         controllerAs: 'list',
@@ -19,7 +20,13 @@ export function LegalListDirective() {
 }
 
 class LegalListController {
-    constructor() {
+    constructor($scope) {
         'ngInject';
+
+        $scope.getSortString = function(document) {
+            let officialTitle = document.OfficialTitle && document.OfficialTitle[0].Text;
+            let title = document.Title && document.Title[0].Text;
+            return ($scope.list.sortbyofficialnumber && document.OfficialNumber || 'xxxxxxxxxx') + (officialTitle ? officialTitle : title) + (!$scope.list.sortbyofficialnumber &&document.OfficialNumber || '');
+        }
     }
 }

@@ -26,7 +26,7 @@
 </div>
 
 <div class="map-nav" ngeo-recenter ngeo-recenter-map="::map.map">
-    <button class="button svg-icon btnSearch" ng-click="map.toggleSearch()">
+    <button class="button svg-icon btnSearch" ng-click="map.toggleSearch()" title="{{ 'tooltip_search' | translate}}">
         <svg class="icon icon-search">
             <use xlink:href="#icon-search"></use>
         </svg>
@@ -34,32 +34,32 @@
 
     <search></search>
 
-    <button class="button svg-icon btnGetLocation" ng-click="map.geolocate()">
+    <button class="button svg-icon btnGetLocation" ng-click="map.geolocate()" title="{{ 'tooltip_current_location' | translate}}">
         <svg class="icon icon-location-2">
             <use xlink:href="#icon-location-2"></use>
         </svg>
     </button>
-    <button ng-if="map.currentEgrid != 0" class="button svg-icon btnCenterObject" ng-click="map.centerObject()">
+    <button ng-if="map.currentEgrid != 0" class="button svg-icon btnCenterObject" ng-click="map.centerObject()" title="{{ 'tooltip_zoom_estate' | translate}}">
             <svg class="icon icon-zoomToCenter">
                 <use xlink:href="#icon-zoomToCenter"></use>
             </svg>
     </button>
-    <button ng-click="map.zoomIn()" class="button svg-icon btnZoomIn hide-for-small-only">
+    <button ng-click="map.zoomIn()" class="button svg-icon btnZoomIn hide-for-small-only" title="{{ 'tooltip_zoom_in' | translate}}">
         <svg class="icon icon-plus">
             <use xlink:href="#icon-plus"></use>
         </svg>
     </button>
-    <button ng-click="map.zoomOut()" type="button" class="button svg-icon btnZoomOut hide-for-small-only">
+    <button ng-click="map.zoomOut()" type="button" class="button svg-icon btnZoomOut hide-for-small-only" title="{{ 'tooltip_zoom_out' | translate}}">
         <svg class="icon icon-minus">
             <use xlink:href="#icon-minus"></use>
         </svg>
     </button>
-    <button class="button svg-icon btnMapAerial" ng-click="map.setView('satellite')" ng-if="map.activeLayer != 'satellite'">
+    <button class="button svg-icon btnMapAerial" ng-click="map.setView('satellite')" ng-if="map.activeLayer != 'satellite'" title="{{ 'tooltip_aerial' | translate}}">
         <svg class="icon icon-aerial">
             <use xlink:href="#icon-aerial"></use>
         </svg>
     </button>
-    <button class="button svg-icon btnMapOrtho" ng-click="map.setView('map')" ng-if="map.activeLayer != 'map'">
+    <button class="button svg-icon btnMapOrtho" ng-click="map.setView('map')" ng-if="map.activeLayer != 'map'" title="{{ 'tooltip_map' | translate}}">
         <svg class="icon icon-map">
             <use xlink:href="#icon-map"></use>
         </svg>
