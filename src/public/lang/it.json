@@ -1,9 +1,10 @@
 {
 
     "languages" : {
-        "german": "Deutsch",
-        "romansh": "Rumantsch",
-        "italian": "Italiano"
+      "german": "Deutsch",
+      "romansh": "Rumantsch",
+      "italian": "Italiano",
+      "french": "Français"
     },
 
     "subtitle": "RDPP",

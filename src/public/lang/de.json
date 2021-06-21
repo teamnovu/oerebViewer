@@ -3,7 +3,8 @@
     "languages" : {
         "german": "Deutsch",
         "romansh": "Rumantsch",
-        "italian": "Italiano"
+        "italian": "Italiano",
+        "french": "Français"
     },
 
     "subtitle": "Kataster",
